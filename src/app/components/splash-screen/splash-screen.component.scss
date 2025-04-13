@@ -1,0 +1,26 @@
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left, #000000, #3533cd);
+    transition: opacity 0.5s;
+    z-index: 1000;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

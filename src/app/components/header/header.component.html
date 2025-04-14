@@ -1,0 +1,40 @@
+<header class="header">
+    <div class="header__container">
+        <div class="header__logo">
+            <a href="/">
+                <img src="/FitTrackFirst.png" alt="Logo" style="height: 90px" />
+            </a>
+        </div>
+
+        <button class="header__toggle" aria-label="Toggle menu" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="header__nav" [class.header__nav--active]="isMenuOpen" role="navigation">
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link" (click)="closeMenu()">Inicio</a>
+                </li>
+
+                <li class="header__menu-item" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+                    <button class="header__menu-link" (click)="toggleSubmenu()" aria-haspopup="true"
+                        [attr.aria-expanded]="isSubmenuOpen">
+                        Usuario
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+
+                    <ul class="header__submenu" [class.header__submenu--visible]="isSubmenuOpen || !isDesktopView">
+                        <li class="header__submenu-item">
+                            <a href="/login" (click)="closeMenu()">Iniciar sesión</a>
+                        </li>
+                        <li class="header__submenu-item">
+                            <a href="#" (click)="closeMenu()">Registrarse</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

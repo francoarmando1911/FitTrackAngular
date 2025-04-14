@@ -1,0 +1,15 @@
+.main-content {
+    padding-top: 80px;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: red;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 60px;
+    }
+}

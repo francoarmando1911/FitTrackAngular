@@ -1,5 +1,6 @@
-<h1>FitTrack app</h1>
+<app-header></app-header>
 <main>
   <app-splash-screen (finish)="onSplashFinish()" *ngIf="showSplash"></app-splash-screen>
   <router-outlet *ngIf="!showSplash"></router-outlet>
 </main>
+<app-footer></app-footer>

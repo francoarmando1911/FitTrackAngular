@@ -14,7 +14,7 @@ export default class RegisterComponent {
   email: string = '';
   password: string = '';
   usuarios: any[] = [];
-  mensaje: string = '';  
+  mensaje: string = '';
 
   constructor(private registerService: RegisterService) { }
 
@@ -31,8 +31,9 @@ export default class RegisterComponent {
       },
       error: (err) => {
         console.error('Error al registrar usuario:', err);
-        this.mensaje = 'Hubo un error al registrar el usuario';
+        this.mensaje = err.error?.message || err.error || 'Hubo un error al registrar el usuario';
       }
     });
   }
 }
+

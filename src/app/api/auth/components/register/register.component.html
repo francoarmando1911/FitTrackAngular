@@ -13,18 +13,32 @@
                         <h3 class="font-semibold text-2xl text-gray-800">Registrarse</h3>
                     </div>
 
+                    <!-- Campo de email -->
                     <div>
                         <input
                             class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-400"
-                            type="email" name="email" [(ngModel)]="email" placeholder="Email" required />
+                            type="email" name="email" [(ngModel)]="username" placeholder="Email" required />
                     </div>
 
+                    <!-- Campo de contraseña -->
                     <div class="relative">
                         <input
                             class="text-sm px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-purple-400"
                             type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
                     </div>
 
+                    <!-- Selección de rol -->
+                    <div>
+                        <label for="role" class="block text-sm font-semibold text-gray-600 mb-2">Rol</label>
+                        <select id="role" name="role" [(ngModel)]="role"
+                            class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-400"
+                            required>
+                            <option value="USER">Usuario</option>
+                            <option value="ADMIN">Administrador</option>
+                        </select>
+                    </div>
+
+                    <!-- Botón de registro -->
                     <div>
                         <button type="submit" class="w-full flex justify-center bg-purple-800 hover:bg-purple-700 text-gray-100 p-3 rounded-lg tracking-wide
                             font-semibold cursor-pointer transition ease-in duration-500">
@@ -33,6 +47,7 @@
                     </div>
                 </form>
 
+                <!-- Mensaje de confirmación -->
                 <div *ngIf="mensaje" class="mt-4 text-center text-sm"
                     [ngClass]="{'text-green-500': mensaje === 'Registro exitoso', 'text-red-500': mensaje !== 'Registro exitoso'}">
                     <p>{{ mensaje }}</p>

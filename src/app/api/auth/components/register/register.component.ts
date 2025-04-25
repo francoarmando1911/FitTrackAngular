@@ -11,8 +11,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './register.component.scss'
 })
 export default class RegisterComponent {
-  email: string = '';
+  username: string = '';
   password: string = '';
+  role: string = 'USER';
   usuarios: any[] = [];
   mensaje: string = '';
 
@@ -20,9 +21,11 @@ export default class RegisterComponent {
 
   registrarUsuario(): void {
     const nuevoUsuario = {
-      email: this.email,
-      password: this.password
+      username: this.username, 
+      password: this.password,
+      role: this.role 
     };
+
 
     this.registerService.registrarUsuario(nuevoUsuario).subscribe({
       next: (data) => {

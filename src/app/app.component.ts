@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SplashScreenComponent } from './components/splash-screen/splash-screen.component'; // ⬅️ Asegurate de que esta ruta sea correcta
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component'; 
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from "./components/footer/footer.component";
 import { HeaderComponent } from "./components/header/header.component";

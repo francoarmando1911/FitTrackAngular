@@ -1,5 +1,167 @@
-<main class="main-content">
-    <div class="relative min-h-screen flex justify-center items-center bg-transparent rounded-3xl shadow-xl">
-        <h1 class="h1">Prueba de home component</h1>
-    </div>
-</main>
+<div class="app-container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Controla tu progreso fitness y nutrición en un solo lugar</h1>
+                    <p>
+                        FitTrack te ayuda a registrar tus rutinas de gimnasio y monitorear tu ingesta calórica para
+                        alcanzar tus
+                        objetivos fitness.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="/register" class="btn btn-primary btn-lg">
+                            Comenzar Ahora
+                            <i class="icon-chevron-right"></i>
+                        </a>
+                        <a href="#como-funciona" class="btn btn-outline btn-lg">
+                            Cómo Funciona
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/placeholder-app.jpg" alt="Aplicación FitTrack en dispositivos" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="como-funciona" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cómo Funciona FitTrack</h2>
+                <p>
+                    Nuestra aplicación te ofrece herramientas completas para seguir tu progreso en el gimnasio y
+                    mantener un
+                    control de tu nutrición.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Workout Tracking Feature -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="icon-dumbbell"></i>
+                        </div>
+                        <h3>Seguimiento de Rutinas</h3>
+                    </div>
+                    <div class="feature-image">
+                        <img src="assets/images/placeholder-workout.jpg" alt="Seguimiento de rutinas de ejercicio" />
+                    </div>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Registra tus ejercicios, series y repeticiones</span>
+                        </li>
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Visualiza tu progreso con gráficos detallados</span>
+                        </li>
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Crea y guarda rutinas personalizadas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Calorie Tracking Feature -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <i class="icon-utensils"></i>
+                        </div>
+                        <h3>Control de Calorías</h3>
+                    </div>
+                    <div class="feature-image">
+                        <img src="assets/images/placeholder-nutrition.jpg" alt="Seguimiento de calorías y nutrición" />
+                    </div>
+                    <ul class="feature-list">
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Registra tu ingesta calórica diaria</span>
+                        </li>
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Monitorea macronutrientes (proteínas, carbohidratos, grasas)</span>
+                        </li>
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Establece metas calóricas y recibe alertas</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="analytics">
+        <div class="container">
+            <div class="analytics-content">
+                <div class="analytics-image">
+                    <img src="assets/images/placeholder-analytics.jpg" alt="Análisis y estadísticas de progreso" />
+                </div>
+                <div class="analytics-text">
+                    <div class="analytics-icon">
+                        <i class="icon-line-chart"></i>
+                    </div>
+                    <h2>Analiza tu Progreso</h2>
+                    <p>
+                        Visualiza tu evolución con gráficos detallados y estadísticas personalizadas. Identifica
+                        patrones y
+                        optimiza tu entrenamiento y nutrición.
+                    </p>
+                    <ul class="analytics-list">
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Gráficos de progreso de fuerza y peso</span>
+                        </li>
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Análisis de tendencias calóricas</span>
+                        </li>
+                        <li>
+                            <i class="icon-check-circle"></i>
+                            <span>Informes semanales y mensuales</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Listo para comenzar tu viaje fitness?</h2>
+            <p>
+                Únete a miles de usuarios que ya están transformando su condición física con FitTrack.
+            </p>
+            <div class="cta-buttons">
+                <a href="/register" class="btn btn-secondary btn-lg">
+                    Crear Cuenta Gratis
+                </a>
+                <a href="/login" class="btn btn-outline-light btn-lg">
+                    Iniciar Sesión
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="icon-dumbbell"></i>
+                    <span>FitTrack</span>
+                </div>
+                <div class="footer-copyright">© {{currentYear}} FitTrack. Todos los derechos reservados.</div>
+            </div>
+        </div>
+    </footer>
+</div>

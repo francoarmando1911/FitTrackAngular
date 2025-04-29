@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HomeFitTrackComponent {
 
+  readonly weekDays = [
+    {day: "Lunes", color: "default", link:"#"},
+    { day: "Martes", color: "default", link: "#" },
+    { day: "Miercoles", color: "default", link: "#" },
+    { day: "Jueves", color: "default", link: "#" },
+    { day: "Viernes", color: "default", link: "#" },
+    { day: "Sabado", color: "default", link: "#" }
+  ];
+
 }

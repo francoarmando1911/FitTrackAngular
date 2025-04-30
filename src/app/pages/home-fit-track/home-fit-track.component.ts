@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-fit-track',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './home-fit-track.component.html',
   styleUrl: './home-fit-track.component.scss'
 })

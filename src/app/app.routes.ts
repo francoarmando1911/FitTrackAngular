@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import LoginComponent from './api/auth/components/login/login.component';
 import RegisterComponent from './api/auth/components/register/register.component';
-import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.component';  // <-- Revisar ruta
+import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.component';  
+import { DailyRoutineComponent } from './pages/daily-routine/daily-routine.component';
 
 export const routes: Routes = [
     {
@@ -11,7 +12,7 @@ export const routes: Routes = [
     },
     {
         path: 'home-fit-track',
-        component: HomeFitTrackComponent  
+        component: HomeFitTrackComponent
     },
     {
         path: 'login',
@@ -24,7 +25,12 @@ export const routes: Routes = [
             import('./api/auth/components/register/register.component').then(() => RegisterComponent),
     },
     {
+        path: 'daily-routine',
+        component: DailyRoutineComponent
+    },
+    {
         path: '**',
         redirectTo: ''
-    },
+    }
 ];
+

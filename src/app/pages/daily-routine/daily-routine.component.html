@@ -1,0 +1,39 @@
+<div class="day-wrapper">
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h2>{{ day }}</h2>
+            </div>
+
+            <div *ngIf="openForm" class="form">
+                <input type="text" [(ngModel)]="exerciseName" placeholder="Nombre del ejercicio" class="input" />
+                <input type="text" [(ngModel)]="exerciseReps" placeholder="Repeticiones" class="input" />
+                <input type="text" [(ngModel)]="exerciseWeight" placeholder="Peso" class="input" />
+                <input type="text" [(ngModel)]="exerciseSeries" placeholder="Series" class="input" />
+
+                <div class="form-actions">
+                    <button (click)="addOrUpdateExercise()" class="submit-btn">
+                        Registrar
+                    </button>
+                    <button (click)="openForm = false" class="cancel-btn">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+
+            <ul class="exercise-list">
+                <li *ngFor="let exercise of exercises; let i = index" class="exercise-item">
+                    <div class="exercise-info">
+                        <p class="exercise-name">{{ exercise.name }}</p>
+                        <p class="exercise-details">{{ exercise.reps }} reps - {{ exercise.weight }} kg - {{
+                            exercise.series }} series</p>
+                    </div>
+                    <div class="exercise-actions">
+                        <button (click)="editExercise(i)" class="edit-btn">Editar</button>
+                        <button (click)="removeExercise(i)" class="delete-btn">Eliminar</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

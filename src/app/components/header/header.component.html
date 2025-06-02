@@ -15,7 +15,7 @@
         <nav class="header__nav" [class.header__nav--active]="isMenuOpen" role="navigation">
             <ul class="header__menu">
                 <li class="header__menu-item">
-                    <a href="#" class="header__menu-link" (click)="closeMenu()">Inicio</a>
+                    <a href="/home-fit-track" class="header__menu-link" (click)="closeMenu()">Inicio</a>
                 </li>
 
                 <li class="header__menu-item" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
@@ -27,10 +27,16 @@
 
                     <ul class="header__submenu" [class.header__submenu--visible]="isSubmenuOpen || !isDesktopView">
                         <li class="header__submenu-item">
-                            <a href="/login" (click)="closeMenu()">Iniciar sesión</a>
+                            <a href="/days-component" (click)="closeMenu()">Rutina</a>
                         </li>
                         <li class="header__submenu-item">
-                            <a href="/register" (click)="closeMenu()">Registrarse</a>
+                            <a href="/register" (click)="closeMenu()">Calorias</a>
+                        </li>
+                        <li class="header__submenu-item">
+                            <a href="/register" (click)="closeMenu()">Progreso</a>
+                        </li>
+                        <li class="header__submenu-item">
+                            <a href="/register" (click)="closeMenu()">Perfil</a>
                         </li>
                     </ul>
                 </li>

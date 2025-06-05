@@ -1,1 +1,9 @@
-<p>day-picker works!</p>
+<div class="picker-container">
+    <h2>Seleccione un día</h2>
+    <div class="day-buttons">
+        <button *ngFor="let day of daysOfWeek" (click)="goToRoutine(day)">
+            {{ day }}
+        </button>
+    </div>
+</div>
+  

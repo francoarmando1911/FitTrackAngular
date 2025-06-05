@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 interface Exercise {
   name: string;
@@ -13,20 +13,13 @@ interface Exercise {
 @Component({
   selector: 'app-daily-routine',
   standalone: true,
-  imports: [
-    RouterModule,
-    CommonModule,
-    FormsModule 
-  ],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './daily-routine.component.html',
   styleUrl: './daily-routine.component.scss'
 })
 export class DailyRoutineComponent implements OnInit {
-
   openForm = true;
-
-  @Input() day!: string;
-
+  day: string = '';
   exercises: Exercise[] = [];
 
   exerciseName = '';
@@ -35,11 +28,19 @@ export class DailyRoutineComponent implements OnInit {
   exerciseSeries = '';
   editIndex: number | null = null;
 
+  constructor(private route: ActivatedRoute, private location: Location) { }
+
   ngOnInit(): void {
+    this.day = this.route.snapshot.paramMap.get('day') || '';
+
     const storedExercises = localStorage.getItem(this.day);
     if (storedExercises) {
       this.exercises = JSON.parse(storedExercises);
     }
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   saveExercises(): void {
@@ -84,5 +85,4 @@ export class DailyRoutineComponent implements OnInit {
     this.exerciseSeries = exercise.series;
     this.editIndex = index;
   }
-
 }

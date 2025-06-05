@@ -5,6 +5,7 @@ import RegisterComponent from './api/auth/components/register/register.component
 import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.component';  
 import { DailyRoutineComponent } from './pages/daily-routine/daily-routine.component';
 import { DaysComponent } from './pages/days/days.component';
+import { DayPickerComponent } from './pages/day-picker/day-picker.component';
 
 export const routes: Routes = [
     {
@@ -30,8 +31,12 @@ export const routes: Routes = [
         component: DaysComponent
     },
     {
-        path: 'daily-routine',
+        path: 'daily-routine/:day',
         component: DailyRoutineComponent
+    },
+    {
+        path: 'daily-picker-component',
+        component: DayPickerComponent
     },
     {
         path: '**',

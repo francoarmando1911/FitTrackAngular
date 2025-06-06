@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./day-picker.component.scss']
 })
 export class DayPickerComponent {
+  
   daysOfWeek = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
   constructor(private router: Router) { }

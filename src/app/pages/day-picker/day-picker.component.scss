@@ -1,6 +1,9 @@
 .picker-container {
     min-height: 100vh;
-    background: linear-gradient(to bottom, #f43f5e, #fb923c);
+    background: linear-gradient(to bottom,
+        #000000,
+        #3533cd
+    );
     padding: 2rem;
     display: flex;
     flex-direction: column;

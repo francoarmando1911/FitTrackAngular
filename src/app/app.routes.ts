@@ -34,7 +34,7 @@ export const routes: Routes = [
     {
         path: 'daily-routine/:day',
         component: DailyRoutineComponent,
-        data: { renderMode: 'dynamic' }
+        
     },
     {
         path: 'daily-picker-component',

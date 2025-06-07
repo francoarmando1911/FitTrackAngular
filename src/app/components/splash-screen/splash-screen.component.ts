@@ -23,8 +23,8 @@ export class SplashScreenComponent {
       setTimeout(() => {
         console.log('[SplashScreen] Emitiendo finish');
         this.finish.emit();
-      }, 500);
-    }, 2000);
+      }, 200);
+    }, 1000);
   }  
 }
 

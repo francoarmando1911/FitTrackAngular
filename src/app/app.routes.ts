@@ -7,6 +7,7 @@ import { DailyRoutineComponent } from './pages/daily-routine/daily-routine.compo
 import { DaysComponent } from './pages/days/days.component';
 import { DayPickerComponent } from './pages/day-picker/day-picker.component';
 import { RenderMode } from '@angular/ssr';
+import { CaloriesComponent } from './pages/calories/calories.component';
 
 export const routes: Routes = [
     {
@@ -39,6 +40,10 @@ export const routes: Routes = [
     {
         path: 'daily-picker-component',
         component: DayPickerComponent
+    },
+    {
+        path: 'calories-component',
+        component: CaloriesComponent
     },
     {
         path: '**',

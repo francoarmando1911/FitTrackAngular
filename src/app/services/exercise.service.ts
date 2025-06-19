@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Ejercicio } from '../models/ejercicio';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ExerciseService {
@@ -7,11 +9,11 @@ export class ExerciseService {
 
   constructor(private http: HttpClient) { }
 
-  saveExercise(ejercicio: any) {
-    return this.http.post(this.apiUrl, ejercicio);
+  saveExercise(ejercicio: Ejercicio): Observable<Ejercicio> {
+    return this.http.post<Ejercicio>(this.apiUrl, ejercicio);
   }
 
-  getExercises() {
-    return this.http.get(this.apiUrl);
+  getExercises(): Observable<Ejercicio[]> {
+    return this.http.get<Ejercicio[]>(this.apiUrl);
   }
 }

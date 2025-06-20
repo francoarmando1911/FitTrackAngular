@@ -2,11 +2,10 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import LoginComponent from './api/auth/components/login/login.component';
 import RegisterComponent from './api/auth/components/register/register.component';
-import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.component';  
+import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.component';
 import { DailyRoutineComponent } from './pages/daily-routine/daily-routine.component';
 import { DaysComponent } from './pages/days/days.component';
 import { DayPickerComponent } from './pages/day-picker/day-picker.component';
-import { RenderMode } from '@angular/ssr';
 import { CaloriesComponent } from './pages/calories/calories.component';
 
 export const routes: Routes = [
@@ -35,7 +34,7 @@ export const routes: Routes = [
     {
         path: 'daily-routine/:day',
         component: DailyRoutineComponent,
-        
+
     },
     {
         path: 'daily-picker-component',

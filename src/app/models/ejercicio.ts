@@ -1,4 +1,3 @@
-// src/app/models/ejercicio.ts
 export interface Ejercicio {
     id?: number;
     nombre: string;

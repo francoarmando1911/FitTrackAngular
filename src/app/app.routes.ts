@@ -6,7 +6,6 @@ import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.com
 import { DailyRoutineComponent } from './pages/daily-routine/daily-routine.component';
 import { DaysComponent } from './pages/days/days.component';
 import { DayPickerComponent } from './pages/day-picker/day-picker.component';
-import { RenderMode } from '@angular/ssr';
 import { CaloriesComponent } from './pages/calories/calories.component';
 
 export const routes: Routes = [

@@ -2,6 +2,12 @@
 @use "tailwindcss/components";
 @use "tailwindcss/utilities";
 
+@layer utilities {
+    .border-border {
+        @apply border border-gray-300;
+    } 
+}
+
 html, body, #root, app-root {
     height: 100%;
     margin: 0;

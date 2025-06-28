@@ -1,0 +1,26 @@
+<div class="calories-register">
+    <div class="link-card">
+        <h1 class="h1">Registrar de Calorías Gastadas</h1>
+        <form (ngSubmit)="addEntry()">
+            <label>
+                Fecha:
+                <input type="date" [(ngModel)]="date" name="date" required />
+            </label>
+            <label>
+                Calorías:
+                <input type="number" [(ngModel)]="calories" name="calories" required min="1" />
+            </label>
+            <button type="submit">Agregar</button>
+        </form>
+        <div *ngIf="entries.length > 0">
+            <h3>Registros</h3>
+            <ul>
+                <li *ngFor="let entry of entries; let i = index">
+                    {{ entry.date }} - {{ entry.calories }} cal
+                    <button (click)="removeEntry(i)">Eliminar</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+  

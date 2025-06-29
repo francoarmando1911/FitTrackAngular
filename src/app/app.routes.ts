@@ -8,6 +8,7 @@ import { DaysComponent } from './pages/days/days.component';
 import { DayPickerComponent } from './pages/day-picker/day-picker.component';
 import { CaloriesComponent } from './pages/calories/calories.component';
 import { CaloriesRegisterComponent } from './pages/calories-register/calories-register.component';
+import { CaloriesIngestedComponent } from './pages/calories-ingested/calories-ingested.component';
 
 export const routes: Routes = [
     {
@@ -48,6 +49,10 @@ export const routes: Routes = [
     {
         path:'calories-register',
         component: CaloriesRegisterComponent
+    },
+    {
+        path: 'calories-ingested',
+        component: CaloriesIngestedComponent
     },
     {
         path: '**',

@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-calories-register',
+  selector: 'app-calories-ingested',
   standalone: true,
-  templateUrl: './calories-register.component.html',
-  styleUrls: ['./calories-register.component.scss'],
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule],
+  templateUrl: './calories-ingested.component.html',
+  styleUrl: './calories-ingested.component.scss'
 })
-export class CaloriesRegisterComponent {
+export class CaloriesIngestedComponent {
   date: string = '';
   calories: number | null = null;
   entries: { date: string; calories: number }[] = [];
@@ -33,11 +33,11 @@ export class CaloriesRegisterComponent {
   }
 
   saveEntries() {
-    localStorage.setItem('caloriesEntries', JSON.stringify(this.entries));
+    localStorage.setItem('caloriesIngested', JSON.stringify(this.entries));
   }
 
   loadEntries() {
-    const entries = localStorage.getItem('caloriesEntries');
+    const entries = localStorage.getItem('caloriesIngested');
     if (entries) {
       this.entries = JSON.parse(entries);
     }

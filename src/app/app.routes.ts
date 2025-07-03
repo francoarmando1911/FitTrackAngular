@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import LoginComponent from './api/auth/components/login/login.component';
 import RegisterComponent from './api/auth/components/register/register.component';
 import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.component';
@@ -9,14 +8,11 @@ import { DayPickerComponent } from './pages/day-picker/day-picker.component';
 import { CaloriesComponent } from './pages/calories/calories.component';
 import { CaloriesRegisterComponent } from './pages/calories-register/calories-register.component';
 import { CaloriesIngestedComponent } from './pages/calories-ingested/calories-ingested.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
-    },
-    {
-        path: 'home-fit-track',
         component: HomeFitTrackComponent
     },
     {
@@ -53,6 +49,10 @@ export const routes: Routes = [
     {
         path: 'calories-ingested',
         component: CaloriesIngestedComponent
+    },
+    {
+        path: 'profile-component',
+        component: ProfileComponent
     },
     {
         path: '**',

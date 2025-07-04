@@ -51,11 +51,11 @@
             <section class="activity-summary">
                 <h3>Resumen de Actividad</h3>
                 <div class="summary-content">
-                    <ng-container *ngIf="ultimaCaloria; else sinDatos">
-                        <p>Último registro: {{ ultimaCaloria.cantidad }} calorías el {{ ultimaCaloria.fecha }}</p>
-                    </ng-container>
+                    <p *ngIf="ultimaCaloria; else sinDatos">
+                        Último registro: {{ ultimaCaloria.calories }} calorías el {{ ultimaCaloria.date }}
+                    </p>
                     <ng-template #sinDatos>
-                        <p>No hay registros de calorías gastadas aún.</p>
+                        <p>No hay registros de calorías gastadas aún.</p>        
                     </ng-template>
                 </div>
             </section>

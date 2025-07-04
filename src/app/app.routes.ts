@@ -9,6 +9,7 @@ import { CaloriesComponent } from './pages/calories/calories.component';
 import { CaloriesRegisterComponent } from './pages/calories-register/calories-register.component';
 import { CaloriesIngestedComponent } from './pages/calories-ingested/calories-ingested.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RoutinePickerComponent } from './pages/routine-picker/routine-picker.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +38,10 @@ export const routes: Routes = [
     {
         path: 'daily-picker-component',
         component: DayPickerComponent
+    },
+    {
+        path: 'routine-picker',
+        component: RoutinePickerComponent
     },
     {
         path: 'calories-component',

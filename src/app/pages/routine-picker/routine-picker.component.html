@@ -1,0 +1,18 @@
+<div class="picker-container">
+    <h2>Seleccione un día</h2>
+    <div class="day-buttons">
+        <button *ngFor="let day of daysOfWeek" (click)="goToRoutine(day)">
+            {{ day }}
+        </button>
+    </div>
+
+    <div *ngIf="selectedDay" class="routine-container">
+        <h3>Rutina para {{ selectedDay }}</h3>
+        <ul>
+            <li *ngFor="let ejercicio of rutinas[selectedDay]">
+                {{ ejercicio }}
+            </li>
+        </ul>
+    </div>
+</div>
+  

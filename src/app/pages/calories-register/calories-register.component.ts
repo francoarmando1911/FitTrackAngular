@@ -1,6 +1,8 @@
-import { CommonModule } from '@angular/common';
+// calories-register.component.ts
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CaloriesRegisterService, CaloriaEntry } from '../../services/calories-register.service';
 
 @Component({
   selector: 'app-calories-register',
@@ -12,34 +14,24 @@ import { FormsModule } from '@angular/forms';
 export class CaloriesRegisterComponent {
   date: string = '';
   calories: number | null = null;
-  entries: { date: string; calories: number }[] = [];
+  entries: CaloriaEntry[] = [];
 
-  constructor() {
-    this.loadEntries();
+  constructor(private service: CaloriesRegisterService) {
+    this.service.entries$.subscribe(entries => {
+      this.entries = entries;
+    });
   }
 
   addEntry() {
     if (this.date && this.calories && this.calories > 0) {
-      this.entries.push({ date: this.date, calories: this.calories });
-      this.saveEntries();
+      const entry: CaloriaEntry = { date: this.date, calories: this.calories };
+      this.service.addEntry(entry);
       this.date = '';
       this.calories = null;
     }
   }
 
   removeEntry(index: number) {
-    this.entries.splice(index, 1);
-    this.saveEntries();
-  }
-
-  saveEntries() {
-    localStorage.setItem('caloriesEntries', JSON.stringify(this.entries));
-  }
-
-  loadEntries() {
-    const entries = localStorage.getItem('caloriesEntries');
-    if (entries) {
-      this.entries = JSON.parse(entries);
-    }
+    this.service.removeEntry(index);
   }
 }

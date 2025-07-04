@@ -15,14 +15,16 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeFitTrackComponent implements OnInit {
 
-  ultimaCaloria: { fecha: string, cantidad: number } | null = null;
+  ultimaCaloria: { date: string, calories: number } | null = null;
 
   constructor(private caloriasService: CaloriesRegisterService) { }
 
   ngOnInit(): void {
-    this.ultimaCaloria = this.caloriasService.obtenerUltimaCaloria();
+    this.caloriasService.entries$.subscribe(entries => {
+      this.ultimaCaloria = entries.length > 0 ? entries[entries.length - 1] : null;
+    });
   }
-
+  
   readonly weekDays = [
     {day: "Lunes", color: "default", link:"#"},
     { day: "Martes", color: "default", link: "#" },

@@ -1,53 +1,56 @@
 <main class="main-content">
-    <div class="relative min-h-screen flex justify-center items-center bg-transparent rounded-3xl shadow-xl">
-        <div class="flex-col flex self-center lg:px-14 sm:max-w-4xl xl:max-w-md z-10">
-            <div class="self-start hidden lg:flex flex-col text-gray-300">
-                <h1 class="my-3 font-semibold text-4xl">Bienvenidos a FitTrack</h1>
-                <p class="pr-3 text-sm opacity-75">Lorem ipsum...</p>
-            </div>
-        </div>
-        <div class="flex justify-center self-center z-10">
-            <div class="p-12 bg-white mx-auto rounded-3xl w-96">
-                <form (ngSubmit)="registrarUsuario()" #form="ngForm" class="space-y-6">
-                    <div class="mb-7">
-                        <h3 class="font-semibold text-2xl text-gray-800">Registrarse</h3>
-                    </div>
-
-                    <div>
-                        <input
-                            class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border-gray-200 rounded-lg focus:outline-none focus:border-purple-400"
-                            type="email" name="email" [(ngModel)]="username" placeholder="Email" required />
-                    </div>
-
-                    <div class="relative">
-                        <input
-                            class="text-sm px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border-gray-200 focus:outline-none focus:border-purple-400"
-                            type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
-                    </div>
-
-                    <div>
-                        <label for="role" class="block text-sm font-semibold text-gray-600 mb-2">Rol</label>
-                        <select id="role" name="role" [(ngModel)]="role"
-                            class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border-gray-200 rounded-lg focus:outline-none focus:border-purple-400"
-                            required>
-                            <option value="USER">Usuario</option>
-                            <option value="ADMIN">Administrador</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <button type="submit" class="w-full flex justify-center bg-purple-800 hover:bg-purple-700 text-gray-100 p-3 rounded-lg tracking-wide
-                            font-semibold cursor-pointer transition ease-in duration-500">
-                            Registrarse
-                        </button>
-                    </div>
-                </form>
-
-                <div *ngIf="mensaje" class="mt-4 text-center text-sm"
-                    [ngClass]="{'text-green-500': mensaje === 'Registro exitoso', 'text-red-500': mensaje !== 'Registro exitoso'}">
-                    <p>{{ mensaje }}</p>
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="p-10 bg-white rounded-3xl shadow-xl w-80 sm:w-96">
+            <form (ngSubmit)="registrarUsuario()" #form="ngForm" class="space-y-6">
+                <div class="text-center">
+                    <h3 class="font-semibold text-2xl text-gray-800">Registrarse</h3>
                 </div>
+
+                <div>
+                    <input
+                        class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-400"
+                        type="email" name="email" [(ngModel)]="username" placeholder="Email" required />
+                </div>
+
+                <div>
+                    <input
+                        class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-400"
+                        type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+                </div>
+
+                <div>
+                    <label for="role" class="block text-sm font-semibold text-gray-600 mb-2">Rol</label>
+                    <select id="role" name="role" [(ngModel)]="role"
+                        class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-400"
+                        required>
+                        <option value="USER">Usuario</option>
+                        <option value="ADMIN">Administrador</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit"
+                        class="w-full bg-purple-800 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition duration-300">
+                        Registrarse
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-sm text-gray-600">
+                        ¿Ya tenés una cuenta?
+                        <a routerLink="/login" class="text-purple-800 font-semibold hover:underline">Iniciá
+                            sesión</a>
+                    </p>
+                </div>
+            </form>
+
+            <div *ngIf="mensaje" class="mt-4 text-center text-sm" [ngClass]="{
+            'text-green-500': mensaje === 'Registro exitoso',
+            'text-red-500': mensaje !== 'Registro exitoso'
+          }">
+                <p>{{ mensaje }}</p>
             </div>
         </div>
     </div>
 </main>
+  

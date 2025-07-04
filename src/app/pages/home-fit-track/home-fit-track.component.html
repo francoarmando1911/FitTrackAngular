@@ -37,7 +37,7 @@
                     </div>
                 </a>
 
-                <a [routerLink]="['/perfil']" class="panel">
+                <a [routerLink]="['/profile-component']" class="panel">
                     <div class="panel-content">
                         <div class="panel-icon panel-icon-orange">
                             <i class="fa fa-user"></i>
@@ -51,7 +51,12 @@
             <section class="activity-summary">
                 <h3>Resumen de Actividad</h3>
                 <div class="summary-content">
-                    <p>Panel para mostrar resumen de actividad reciente</p>
+                    <ng-container *ngIf="ultimaCaloria; else sinDatos">
+                        <p>Último registro: {{ ultimaCaloria.cantidad }} calorías el {{ ultimaCaloria.fecha }}</p>
+                    </ng-container>
+                    <ng-template #sinDatos>
+                        <p>No hay registros de calorías gastadas aún.</p>
+                    </ng-template>
                 </div>
             </section>
         </main>

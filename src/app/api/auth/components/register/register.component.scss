@@ -1,9 +1,8 @@
 .main-content {
-    padding-top: 80px;
-}
-
-@media (max-width: 768px) {
-    .main-content {
-        padding-top: 60px;
-    }
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #000000, #3533cd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
 }

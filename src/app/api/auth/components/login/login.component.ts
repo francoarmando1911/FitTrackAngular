@@ -1,38 +1,38 @@
 import { Component } from '@angular/core';
-import { RegisterService } from '../../../../services/register.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LoginService } from '../../../../services/login.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { LoginService, User } from '../../../../services/login.service';
 
 @Component({
   selector: 'app-login',
-  standalone:true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export default class LoginComponent {
-  username: string = '';
+export class LoginComponent {
+  email: string = '';
   password: string = '';
   mensaje: string = '';
 
-  constructor(private loginService: LoginService){}
+  constructor(private loginService: LoginService, private router: Router) { }
 
-  loginUsuario(): void {
+  onLogin(): void {
     const enterUsuario = {
-      username: this.username,
+      email: this.email,
       password: this.password
     };
 
     this.loginService.loginUsuario(enterUsuario).subscribe({
-      next: (data) => {
+      next: (data: User) => {
         console.log('Usuario logueado correctamente', data);
         this.mensaje = 'Logueo exitoso';
+        this.router.navigate(['/profile']);
       },
-      error: (err) => {
-        console.log('Eror al registrar el usuario:', err);
-        this.mensaje = err.error?.message || err.error || 'Hubo un error al registrar el usuario';
+      error: (err: Error) => {
+        console.error('Error al iniciar sesión:', err);
+        this.mensaje = `Error: ${err.message}`;
       }
     });
   }

@@ -1,1 +1,37 @@
-<p>profile works!</p>
+<div class="profile-container">
+    <ng-container *ngIf="isLoggedIn && user; else notLoggedInTemplate">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img [src]="user.avatarUrl || 'https://i.pravatar.cc/150?u=default'" alt="Avatar del usuario"
+                    class="profile-avatar">
+                <h2 class="profile-name">{{ user.name }}</h2>
+                <p class="profile-email">{{ user.email }}</p>
+            </div>
+            <div class="profile-body">
+                <h3>Detalles del Perfil</h3>
+                <p>Aquí puedes agregar más información sobre el usuario, como estadísticas de ejercicios, metas, etc.
+                </p>
+            </div>
+            <div class="profile-actions">
+                <button class="btn btn-logout" (click)="logout()">Cerrar Sesión</button>
+            </div>
+        </div>
+    </ng-container>
+
+    <!-- Plantilla para cuando el usuario no está logueado -->
+    <ng-template #notLoggedInTemplate>
+        <div class="profile-card generic-profile">
+            <div class="profile-header">
+                <img src="#" alt="Avatar genérico" class="profile-avatar">
+                <h2 class="profile-name">Perfil de Invitado</h2>
+                <p class="profile-email">Inicia sesión para ver tu perfil personalizado.</p>
+            </div>
+            <div class="profile-body">
+                <p>Únete a FitTrack para registrar tus entrenamientos y seguir tu progreso</p>
+            </div>
+            <div class="profile-actions">
+                <button class="btn btn-login" [routerLink]="['/login']" (click)="login()">Iniciar Sesión</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

@@ -1,7 +1,7 @@
 <main class="main-content">
     <div class="min-h-screen flex items-center justify-center">
         <div class="p-10 bg-white rounded-3xl shadow-xl w-80 sm:w-96">
-            <form (ngSubmit)="loginUsuario()" #form="ngForm" class="space-y-6">
+            <form (ngSubmit)="onLogin()" #form="ngForm" class="space-y-6">
                 <div class="text-center">
                     <h3 class="font-semibold text-2xl text-gray-800">Login</h3>
                 </div>
@@ -9,7 +9,7 @@
                 <div>
                     <input
                         class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-400"
-                        type="email" name="email" [(ngModel)]="username" placeholder="Email" required />
+                        type="email" name="email" [(ngModel)]="email" placeholder="Email" required />
                 </div>
 
                 <div>
@@ -27,18 +27,16 @@
                 <div class="text-center">
                     <p class="text-sm text-gray-600">
                         ¿No tenés una cuenta?
-                        <a routerLink="/register" class="text-purple-800 font-semibold hover:underline">Registrate acá</a>
+                        <a routerLink="/register" class="text-purple-800 font-semibold hover:underline">Registrate
+                            acá</a>
                     </p>
-                </div>                  
+                </div>
             </form>
 
-            <div *ngIf="mensaje" class="mt-4 text-center text-sm" [ngClass]="{
-            'text-green-500': mensaje === 'Login exitoso',
-            'text-red-500': mensaje !== 'Login exitoso'
-          }">
-                <p>{{ mensaje }}</p>
+            <div *ngIf="mensaje" class="mt-4 text-center p-2 rounded-lg"
+                [ngClass]="{'bg-green-200 text-green-800': !mensaje.startsWith('Error'), 'bg-red-200 text-red-800': mensaje.startsWith('Error')}">
+                {{ mensaje }}
             </div>
         </div>
     </div>
 </main>
-  

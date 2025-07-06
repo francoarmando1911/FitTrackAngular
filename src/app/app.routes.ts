@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import LoginComponent from './api/auth/components/login/login.component';
+import { LoginComponent } from './api/auth/components/login/login.component';
 import RegisterComponent from './api/auth/components/register/register.component';
 import { HomeFitTrackComponent } from './pages/home-fit-track/home-fit-track.component';
 import { DailyRoutineComponent } from './pages/daily-routine/daily-routine.component';
@@ -56,7 +56,7 @@ export const routes: Routes = [
         component: CaloriesIngestedComponent
     },
     {
-        path: 'profile-component',
+        path: 'profile',
         component: ProfileComponent
     },
     {

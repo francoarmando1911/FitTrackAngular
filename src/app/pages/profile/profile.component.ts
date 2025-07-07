@@ -26,16 +26,15 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.userSubscription) {
-      this.userSubscription.unsubscribe();
-    }
-  }
-
-  login(): void {
-    this.loginService.login();
+    this.userSubscription?.unsubscribe();
   }
 
   logout(): void {
     this.loginService.logout();
+    this.router.navigate(['/login']); 
+  }
+
+  irAlLogin(): void {
+    this.router.navigate(['/login']);
   }
 }

@@ -2,7 +2,7 @@
     <ng-container *ngIf="isLoggedIn && user; else notLoggedInTemplate">
         <div class="profile-card">
             <div class="profile-header">
-                <img [src]="user.avatarUrl || 'https://i.pravatar.cc/150?u=default'" alt="Avatar del usuario"
+                <img [src]="user.avatarUrl || '/public/invitado.png'" alt="Avatar del usuario"
                     class="profile-avatar">
                 <h2 class="profile-name">{{ user.name }}</h2>
                 <p class="profile-email">{{ user.email }}</p>
@@ -22,7 +22,7 @@
     <ng-template #notLoggedInTemplate>
         <div class="profile-card generic-profile">
             <div class="profile-header">
-                <img src="#" alt="Avatar genérico" class="profile-avatar">
+                <img src="/public/invitado.png" alt="Avatar genérico" class="profile-avatar">
                 <h2 class="profile-name">Perfil de Invitado</h2>
                 <p class="profile-email">Inicia sesión para ver tu perfil personalizado.</p>
             </div>
@@ -30,8 +30,9 @@
                 <p>Únete a FitTrack para registrar tus entrenamientos y seguir tu progreso</p>
             </div>
             <div class="profile-actions">
-                <button class="btn btn-login" [routerLink]="['/login']" (click)="login()">Iniciar Sesión</button>
+                <button class="btn btn-login" [routerLink]="['/login']">Iniciar Sesión</button>
             </div>
         </div>
     </ng-template>
+      
 </div>

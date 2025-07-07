@@ -2,8 +2,7 @@
     <ng-container *ngIf="isLoggedIn && user; else notLoggedInTemplate">
         <div class="profile-card">
             <div class="profile-header">
-                <img [src]="user.avatarUrl || '/public/invitado.png'" alt="Avatar del usuario"
-                    class="profile-avatar">
+                <img [src]="user.avatarUrl || 'assets/images/invitado.png'" alt="Avatar del usuario" class="profile-avatar">
                 <h2 class="profile-name">{{ user.name }}</h2>
                 <p class="profile-email">{{ user.email }}</p>
             </div>
@@ -22,7 +21,7 @@
     <ng-template #notLoggedInTemplate>
         <div class="profile-card generic-profile">
             <div class="profile-header">
-                <img src="/public/invitado.png" alt="Avatar genérico" class="profile-avatar">
+                <img src="assets/images/invitado.png" alt="Avatar genérico" class="profile-avatar">
                 <h2 class="profile-name">Perfil de Invitado</h2>
                 <p class="profile-email">Inicia sesión para ver tu perfil personalizado.</p>
             </div>

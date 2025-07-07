@@ -177,23 +177,26 @@
             background-color: #f2f2f2;
             box-shadow: none;
             padding: 0;
-            opacity: 1 !important;
-            visibility: visible !important;
+            opacity: 0;
+            visibility: hidden;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
-
+            transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        
             &--visible {
+                opacity: 1;
+                visibility: visible;
                 max-height: 300px;
             }
-
+        
             &-item {
                 padding: 0.5rem 2rem;
-
+        
                 a {
                     display: block;
                 }
             }
         }
+        
     }
 }
